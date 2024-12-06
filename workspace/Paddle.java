@@ -52,7 +52,7 @@ public class Paddle {
 
 
 
-
+	//methods regards redrawing the paddle
 	public void move(){
 		setX(xPos += xVelocity);
 	}
