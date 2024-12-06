@@ -175,6 +175,14 @@ public class BrickBreak extends JPanel implements KeyListener, ActionListener {
 			ball.reverseY();
 		}
 
+		if (player.getX()+player.getWidth() > 682){
+			player.setVelocity(0);
+			player.setX(682 - player.getWidth());
+		}
+		if (player.getX() < 0){
+			player.setVelocity(0);
+			player.setX(0);
+		}
 
 	}
 
@@ -206,17 +214,17 @@ public class BrickBreak extends JPanel implements KeyListener, ActionListener {
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			play = true;
-			if (player.getVelocity() == 0)
-				player.addVelocity(8);
-			else {
+			if (player.getVelocity() == -2)
 				player.addVelocity(4);
+			else {
+				player.addVelocity(2);
 			}
 		} else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 			play = true;
-			if (player.getVelocity() == 0)
-				player.addVelocity(-8);
-			else {
+			if (player.getVelocity() == 2)
 				player.addVelocity(-4);
+			else {
+				player.addVelocity(-2);
 			}
 		}
 
